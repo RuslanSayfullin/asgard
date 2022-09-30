@@ -6,7 +6,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('ajax.urls')),
+    path('ajax/', include('ajax.urls'))
 ]
 
 if settings_db_debug.DEBUG:
@@ -16,3 +16,5 @@ if settings_db_debug.DEBUG:
     ] + urlpatterns
 
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+

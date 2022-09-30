@@ -8,11 +8,4 @@ urlpatterns = [
     path('validate_username', validate_username, name='validate_username')
 ]
 
-# dj_ajax/urls.py
-from django.contrib import admin
-from django.urls import path, include
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('ajax/', include('ajax.urls'))
-]
