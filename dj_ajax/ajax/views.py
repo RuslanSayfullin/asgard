@@ -8,6 +8,7 @@ from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 from .forms import ContactForm
+from django.views.generic.edit import CreateView, FormView
 
 
 @login_required(login_url='signup')
@@ -48,3 +49,24 @@ def contact_form(request):
             return JsonResponse({"errors": errors}, status=400)
 
     return render(request, "contact.html", {"form": form})
+
+
+class ContactFormView(FormView):
+    template_name = 'contact.html'
+    form_class = ContactForm
+
+    def form_valid(self, form):
+        """
+        Если форма валидна, вернем код 200
+        вместе с именем пользователя
+        """
+        name = form.cleaned_data['name']
+        form.save()
+        return JsonResponse({"name": name}, status=200)
+
+    def form_invalid(self, form):
+        """
+        Если форма невалидна, возвращаем код 400 с ошибками.
+        """
+        errors = form.errors.as_json()
+        return JsonResponse({"errors": errors}, status=400)
