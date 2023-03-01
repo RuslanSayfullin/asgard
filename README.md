@@ -7,6 +7,7 @@
     Django = "^4.1"
     pillow = "^9.4.0"
     django-crispy-forms = "^2.0"
+    crispy-bootstrap5 = "^0.7"
     PostgreSQL
 
 Скопируйте репозиторий с помощью команды:

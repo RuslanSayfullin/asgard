@@ -68,4 +68,4 @@ def contact_form(request):
             errors = form.errors.as_json()
             return JsonResponse({"errors": errors}, status=400)
 
-    return render(request, "contact.html", {"form": form})
+    return render(request, 'ajax/contact.html', {"form": form})
