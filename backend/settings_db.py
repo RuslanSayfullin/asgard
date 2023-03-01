@@ -1,7 +1,4 @@
-from .psw import dbase_psw
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+from backend.psw import dbase_psw
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -9,7 +6,7 @@ DEBUG = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'blog',
+        'NAME': 'django_ajax',
         'USER': 'portaluser',
         'PASSWORD': dbase_psw,
         'HOST': 'localhost',

@@ -1,21 +1,24 @@
 import os
 from pathlib import Path
-from .psw import secret_key
-from .settings_db_debug import DEBUG, DATABASES  # импорт настроек "режима отладки" и "базы данных"
+from backend.psw import secret_key      # импорт секретного ключа
+from .settings_db import DATABASES      # импорт данных для "базы данных"
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = secret_key
 
-ALLOWED_HOSTS = ['*']
-INTERNAL_IPS = ("127.0.0.1",)   # кортеж с перечнем IP-адресов, с которых может вестись разработка.
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = True
+
+ALLOWED_HOSTS = ['127.0.0.1', '80.78.244.196', 'chiffre.tech', 'localhost']
+
+# кортеж с перечнем IP-адресов, с которых может вестись разработка.
+INTERNAL_IPS = ('127.0.0.1', '80.78.244.196', 'chiffre.tech', 'localhost')
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -24,6 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar',
+    'django.contrib.humanize',
+] + [
     'ajax.apps.AjaxConfig',
     'crispy_forms',
 ]
@@ -39,12 +44,12 @@ MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',  # Набор панелей, появляющихся на странице в режиме отладки
 ]
 
-ROOT_URLCONF = 'dj_ajax.urls'
+ROOT_URLCONF = 'backend.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -57,10 +62,11 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'dj_ajax.wsgi.application'
+WSGI_APPLICATION = 'backend.wsgi.application'
+
 
 # Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
+# https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -79,36 +85,32 @@ AUTH_PASSWORD_VALIDATORS = [
 
 
 # Internationalization
-# https://docs.djangoproject.com/en/3.2/topics/i18n/
+# https://docs.djangoproject.com/en/4.1/topics/i18n/
 
-LANGUAGE_CODE = 'ru'
+LANGUAGE_CODE = 'ru-ru'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Yekaterinburg'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
-
+# "Поисковики" статики. Ищет статику в STATICFILES_DIRS.
 STATIC_URL = '/static/'    # URL для шаблонов
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',    # "Поисковики" статики. Ищет статику в STATICFILES_DIRS.
+    BASE_DIR / 'static',
 ]
 
+# Абсолютный путь в файловой системе, с каталогом, где файлы, загруженные пользователями.
 MEDIA_URL = '/media/'
-MEDIA_ROOT = [
-    BASE_DIR / 'media',    # Абсолютный путь в файловой системе, с каталогом, где файлы, загруженные пользователями.
-    ]
-
-DATA_UPLOAD_MAX_MEMORY_SIZE = 157286400    # Максимальный размер тела запроса в байтах (150 МБ).
-FILE_UPLOAD_MAX_MEMORY_SIZE = 157286400    # Макс. размер (в байтах) загрузки до ее депортации в файл. систему (150 МБ).
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
+# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
