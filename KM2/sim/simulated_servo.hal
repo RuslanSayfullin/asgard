@@ -1,0 +1,7 @@
+# create HAL signals for position commands from motion module
+# loop position commands back to motion module feedback
+net Xpos joint.0.motor-pos-cmd => joint.0.motor-pos-fb 
+net Ypos joint.1.motor-pos-cmd => joint.1.motor-pos-fb 
+net Ypos1 joint.2.motor-pos-cmd => joint.2.motor-pos-fb 
+net Zpos joint.3.motor-pos-cmd => joint.3.motor-pos-fb 
+

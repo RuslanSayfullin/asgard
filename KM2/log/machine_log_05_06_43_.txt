@@ -1,0 +1,6 @@
+--- Qtvcp Screen Started on: Ср, янв 13 2021 17:05:57 ---
+Ср13 17:05 Машина выключение
+Ср13 17:05 Tool 0: No Tool
+Ср13 17:06 Машина включение
+Ср13 17:06 end of move in home state 7
+Ср13 17:06 Exception in KEYBINDING: no function name conversion for QT Event: 'Key_QuoteLeft'

@@ -1,0 +1,8 @@
+loadusr -W /usr/share/ethercat/linuxcnc_ethercat/src/lcec_conf ethercat/conf.xml
+#loadusr -W /usr/lib/linuxcnc/modules/lcec.so ethercat/conf.xml
+loadrt lcec
+addf lcec.read-all servo-thread
+addf lcec.write-all servo-thread
+#-----------MODBUS---------------------------------------------------------
+#loadusr -W mb2hal config=ethercat/mb2hal.ini
+

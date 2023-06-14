@@ -1,0 +1,13 @@
+#! /bin/bash
+P=$1
+Q=$2
+y=0.5
+div=$(echo "$P*$y" | bc -l)
+
+p=${P%.*}
+echo $p
+    halcmd setp gasketing.app.height $div
+    halcmd setp gasketing.app.width  $P
+    halcmd setp gasketing.app.feed_nom  $Q
+
+exit 0

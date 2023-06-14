@@ -1,0 +1,13 @@
+# halshow watchlist created Thu Dec 31 04:23:29 +05 2020
+
+sig+a.pump.enable
+sig+a.pump.pos-fb
+sig+a.pump.speed-gr
+sig+a.pump.tor
+sig+a.pump.vel-fb
+sig+a.pump.vel-cmd
+pin+lcec.0.U2.VelocityDect
+pin+gasketing.comp.a.pump-speed-ratio
+pin+gasketing.comp.a.pressure.in
+pin+gasketing.comp.a.pressure.out
+pin+ui.pressure-a

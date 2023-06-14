@@ -1,0 +1,28 @@
+(filename m403.ngc)
+o<m403> sub
+
+    G64 P0.001
+    #<FEED> = 10000
+    #<FEED_Z> = 2000
+
+    #<X_pos>= #<_hal[ui.pos.flushing-x]> 
+    #<Y_pos>= #<_hal[ui.pos.flushing-y]> 
+    #<Z_pos>= #<_hal[ui.pos.flushing-z]> 
+    G28.1
+    #<X_save>= #5161
+    #<Y_save>= #5162
+    #<Z_save>= #5163
+    #<SLEEP> = 24
+    G53 G1 Z0 F[#<FEED_Z>]
+    G53 G1 X[#<X_pos>] Y[#<Y_pos>] F[#<FEED>]
+    G53 G1 Z[#<Z_pos>] F[#<FEED_Z> ]
+    M101 P1
+    G4 P[#<SLEEP>]
+
+    G53 G1 Z0 F[#<FEED_Z> ]
+    (G53 G1 X[#<X_save>] Y[#<Y_save>] F[#<FEED>])
+    (G53 G1 Z[#<Z_save>] F[#<FEED_Z>])
+o<m403> endsub
+
+
+M2

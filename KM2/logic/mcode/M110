@@ -1,0 +1,20 @@
+#! /bin/bash
+P=$1
+Q=$2
+p=${P%.*}
+q=${Q%.*}
+
+if [ $q -le 0 ]; then
+    Q=10
+fi
+
+if [ $p -eq 1 ]; then
+    echo  "Компонент B подача " $Q 
+    halcmd setp gasketing.test.b.on True
+    halcmd setp gasketing.test.b.mass $Q
+else
+    echo  "Компонент B завершение подачи компонета "
+    halcmd setp gasketing.test.b.on False
+fi
+
+exit 0

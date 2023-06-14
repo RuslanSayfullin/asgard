@@ -1,0 +1,17 @@
+2021-01-13 17:05:55,456 - QTvcp - INFO - Logging to "/home/nigma/qtvcp.log"
+2021-01-13 17:05:55,789 - QTvcp - INFO - Building A Linuxcnc Main Screen
+2021-01-13 17:05:55,796 - QTvcp - INFO - No handler file specified on command line
+2021-01-13 17:05:55,796 - QTvcp - INFO - No HAL component base name specified on command line using: ui
+2021-01-13 17:05:55,797 - QTvcp - DEBUG - Loading the handler file
+2021-01-13 17:05:56,056 - QTvcp - DEBUG - Adding the key events filter
+2021-01-13 17:05:56,057 - QTvcp.QTVCP.QT_MAKEGUI - INFO - Imported resources.py filed: /home/nigma/gitlab/gasketing_new/Конфигурации/13.01.2021/resources.py
+2021-01-13 17:05:57,153 - QTvcp.QTVCP.WIDGETS.SCREEN_OPTIONS - DEBUG - Switching to Preference File Path from INI: WORKINGFOLDER/.pref
+2021-01-13 17:05:57,340 - QTvcp.QTVCP.WIDGETS.FILE_MANAGER - DEBUG - lAST FILE PATH: 
+2021-01-13 17:05:57,340 - QTvcp.QTVCP.WIDGETS.FILE_MANAGER - DEBUG - lAST FILE PATH: 
+2021-01-13 17:05:57,349 - QTvcp.QTVCP.WIDGETS.STATUS_LABEL - WARNING - status_pump_ovr : no option recognised
+2021-01-13 17:05:57,352 - QTvcp - DEBUG - Calling the handler file's initialized__ function
+2021-01-13 17:05:57,428 - QTvcp - DEBUG - Set HAL ready
+2021-01-13 17:05:57,428 - QTvcp - DEBUG - Show window
+2021-01-13 17:05:57,730 - QTvcp - INFO - postgui filename: postgui.hal
+2021-01-13 17:05:57,755 - QTvcp - INFO - Preference path: /home/nigma/gitlab/gasketing_new/Конфигурации/13.01.2021/.pref
+2021-01-13 17:06:42,498 - QTvcp.UI_HANDLER - DEBUG - Exception in KEYBINDING: no function name conversion for QT Event: 'Key_QuoteLeft'

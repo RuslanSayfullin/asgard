@@ -1,0 +1,46 @@
+[DIALOG_OPTIONS]
+EntryDialog_play_sound = True
+EntryDialog_sound_type = READY
+MachineLogDialog_play_sound = True
+MachineLogDialog_sound_type = READY
+RunFromLineDialog_play_sound = True
+RunFromLineDialog_sound_type = READY
+
+[SCREEN_OPTIONS]
+catch_errors = True
+desktop_notify = True
+shutdown_check = True
+sound_player_on = True
+mainwindow_geometry = 0 0 1920 1080
+
+[MCH_MSG_OPTIONS]
+mchnMsg_play_sound = True
+mchnMsg_speak_errors = True
+mchnMsg_sound_type = RING
+
+[USR_MSG_OPTIONS]
+usermsg_play_sound = True
+userMsg_sound_type = RING
+userMsg_use_focusOverlay = True
+
+[SHUTDOWN_OPTIONS]
+shutdown_play_sound = True
+shutdown_alert_sound_type = READY
+shutdown_exit_sound_type = LOGOUT
+shutdown_msg_title = Do you want to Shutdown now?
+shutdown_msg_detail = 
+
+[NOTIFY_OPTIONS]
+notify_start_greeting = True
+notify_start_title = Welcome
+notify_start_detail = This option can be changed in the preference file
+notify_start_timeout = 5
+
+[BOOK_KEEPING]
+last_loaded_directory = /home/cnc/linuxcnc/nc_files/examples
+style_QSS_Path = DEFAULT
+
+[DIALOG_GEOMETRY]
+LncMessage-geometry = 0 0 100 30
+axisToolButtonDialog_ENTRY = 3 60 222 119
+
