@@ -1,0 +1,14 @@
+#! /bin/bash
+P=$1
+Q=$2
+p=${P%.*}
+echo $p
+if [ $p -eq 1 ]; then
+    echo  "Включение симуляции"
+    halcmd setp gasketing.sim.on True
+else
+    echo  "Выключение симуляции"
+    halcmd setp gasketing.sim.on False
+fi
+
+exit 0

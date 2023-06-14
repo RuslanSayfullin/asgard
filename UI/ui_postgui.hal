@@ -1,0 +1,110 @@
+
+net ec_reset => halui.estop.reset
+net ec_reset => ui.reset
+
+
+net pressure.a-out => ui.pressure-a
+net pressure.b-out => ui.pressure-b
+
+net flushing.is-count => ui.flushing.is-count
+net flushing.is-time => ui.flushing.is-time
+net flushing.time-last => ui.flushing.time-last
+net app.count => ui.app.count
+
+#статустные сообщения
+net a.minimum  => ui.min-a
+net b.minimum  => ui.min-b
+net solvent.minimum => ui.min-solvent
+net a.pressure.is-max  => ui.a.pressure.is-max
+net b.pressure.is-max  => ui.b.pressure.is-max
+net rele.air   ui.rele_air
+net rele.faza   ui.rele_faz
+
+net servo-error   ui.servo_error
+net rele.motor   ui.rele_motor
+
+
+
+#пин для нагрузи на миксер
+net mixer.tor ui.mixer-tor
+
+net a.saturation.is-on => ui.a.saturation-status
+net b.saturation.is-on => ui.b.saturation-status
+
+net a.mixing.is-on => ui.a.mixing-status
+net b.mixing.is-on => ui.b.mixing-status
+
+net a.recovery.is-on => ui.a.recovery-status
+net b.recovery.is-on => ui.b.recovery-status
+
+net flushing.is-on =>  ui.flushing-status
+net reset-comp.is-on => ui.reset_components-status
+net app.is-on => ui.app-status
+
+net cycle_simulation => ui.cycle_simulation
+
+
+net a.test.is-on => ui.test.a-status
+net b.test.is-on => ui.test.b-status
+net mix.is-on => ui.test.mix-status
+net a.test.timer => ui.las_timer_a
+net b.test.timer => ui.las_timer_b
+net mix.test.timer => ui.las_timer_mix
+
+
+net  lighting  <=  ui.btn_lighting
+
+
+net rele.air 	=> ui.led_safety_vavle
+net clapan.02 	=> ui.led_common_valve
+net clapan.03 	=> ui.led_air_valve
+net clapan.04 	=> ui.led_solvent_valve
+net clapan.05 	=> ui.led_feed_comp_a
+net clapan.06 	=> ui.led_feed_comp_b
+net clapan.07-not 	=> ui.led_reset_components
+net clapan.08 	=> ui.led_saturation_components_a
+net clapan.10   =>  ui.led_pressure_components_a
+
+net clapan.12 	=> ui.led_recuperation_comp_a
+net clapan.13 	=> ui.led_recuperation_comp_b
+
+net a.pump.speed-gr =>  ui.feed_comp_a
+net a.pump.speed-gr =>  ui.feed_comp_a_2
+net b.pump.speed-gr =>  ui.feed_comp_b
+net b.pump.speed-gr =>  ui.feed_comp_b_2
+
+net led-homme-all ui.homme-all
+net x.is_home joint.0.homed => ui.led_axis_x_is_home  
+net y1.is_home joint.1.homed => ui.led_axis_y2_is_home
+net y2.is_home joint.2.homed => ui.led_axis_y_is_home
+net z.is_home joint.3.homed => ui.led_axis_z_is_home
+
+net x.Fault  => ui.led_servo_x_is_on
+net y1.Fault => ui.led_servo_y1_is_on
+net y2.Fault => ui.led_servo_y2_is_on
+net z.Fault  => ui.led_servo_z_is_on
+
+net mixer.Fault  => ui.led_servo_mixer
+net a.pump.Fault => ui.led_servo_pump_a_is_on
+net b.pump.Fault => ui.led_servo_pump_b_is_on
+
+#net program.run-in => halui.program.run
+net program.run-in => ui.remote-start
+net program.stop-in => halui.program.stop
+net program.home-all-in => halui.home-all
+net flushing.btn => halui.mdi-command-00
+
+net program.led.running <= halui.program.is-running 
+net program.led.paused <= halui.program.is-paused
+
+net program.led.idle <= halui.program.is-idle
+
+
+#Параметры для таймера рециркуляции
+#время ожидания в часах
+setp ui.b.recovery.timer-sleep-hour 10
+#время рекуперцирации в часах при простое
+setp ui.b.recovery.timer-minutes 15
+
+#Пин с мотора что он включен
+net b.pump.enable ui.b.pump.motor-is-on

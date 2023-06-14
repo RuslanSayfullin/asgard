@@ -1,0 +1,20 @@
+#! /bin/bash
+P=$1
+Q=$2
+p=${P%.*}
+q=${Q%.*}
+
+if [ $q -le 0 ]; then
+    Q=10
+    echo "Q ==" $Q
+fi
+if [ $p -eq 1 ]; then
+    echo  "Компонент A включение насыщения"
+    halcmd setp gasketing.a.saturation.on True
+    halcmd setp gasketing.a.saturation.timer  $Q
+else
+    echo  "Компонент A выключение насыщения"
+    halcmd setp gasketing.a.saturation.on False
+fi
+
+exit 0

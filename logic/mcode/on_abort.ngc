@@ -1,0 +1,7 @@
+(filename on_abort.ngc)
+
+o<on_abort> sub
+      (debug, [motion-controller.timed] exists: #<_hal[motion-controller.time]>)
+  M101 P0
+o<on_abort> endsub
+M2

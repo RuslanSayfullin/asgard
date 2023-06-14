@@ -1,0 +1,24 @@
+(Использован скрипт автогенерации gcode системы управления ACNC)
+(Программа пробник.ngc сгенерирована  06-12-2022 17:07)
+#<Zwork> = 3.000
+#<Zsave> = 100.000
+#<FEED> = 8000.0
+#<FEED_Z> = 2000.0
+#<START_STEP> = 10.000
+#<FINISH_STEP> = 10.000
+#<START_LENGTH> = 0.000
+#<OVERLAP_LENGTH> = 1.000
+#<R1> = 2.000
+#<R2> = 2.000
+#<R3> = 2.000
+#<R4> = 2.000
+#<width>  = 100.000
+#<length> = 100.000
+M400J3.000K9.000F8000.000S1500.000
+G54 G17 G40 G49 G90 G92.1 G94 G64 P0.001
+G1 Z[#<Zsave>] F2000.000000
+(Деталь #1.000 1.000)
+o<rectangle> CALL [17.000] [16.500] [#<width>] [#<length>] [#<R1>] [#<R2>] [#<R3>] [#<R4>] [#<Zsave>] [#<Zwork>] [#<FEED>] [#<FEED_Z>] [#<START_STEP>] [#<START_LENGTH>] [#<OVERLAP_LENGTH>] [#<FINISH_STEP>]
+G53 G0 Z0 
+G53 G0 X0 Y0 
+M2

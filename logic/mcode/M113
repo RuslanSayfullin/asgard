@@ -1,0 +1,9 @@
+#! /bin/bash
+P=$1
+Q=$2
+p=${P%.*}
+q=${Q%.*}
+echo  "клапан " $p
+
+halcmd setp gasketing.P-command $p
+exit 0
