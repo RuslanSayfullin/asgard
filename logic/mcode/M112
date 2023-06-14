@@ -1,8 +1,0 @@
-#! /bin/bash
-P=$1
-Q=$2
-p=${P%.*}
-q=${Q%.*}
-echo  "режим работы " $p
-halcmd setp gasketing.mode $p
-exit 0
